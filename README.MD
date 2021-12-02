@@ -1,26 +1,26 @@
 # Overview
-This is the code I used for the advent of code 2021 event.
+In this repositry you can find the code I used for the advent of code 2021 event.
 
 # Installation process
 ## In Visual Studio Code
 ### To get started:
-- Clone the repository from git.
-- Open a integrated terminal in the project directory.
-- In this terminal, type:
+1. Clone the repository from git.
+2. Open a integrated terminal in the project directory.
+3. In this terminal, type:
 ```
 python -m venv .venv
 ```
-- In the same terminal, type:
+4. In the same terminal, type:
 ```
 .\.venv\Scripts\activate
 ```
-- In the same terminal, type:
+5. In the same terminal, type:
 ```
 pip install -r .\requirements.txt
 ```
 ### To install a new python module
-- Open a integrated terminal in the project directory.
-- In this terminal, type:
+1. Open a integrated terminal in the project directory.
+2. In this terminal, type:
 ```
 .\.venv\Scripts\activate
 ```
