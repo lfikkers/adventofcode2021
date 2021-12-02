@@ -1,9 +1,10 @@
 class Submarine:
-    def __init__(self, name: str = "yellow"):
+    def __init__(self, name: str = "yellow", verbose: bool = False):
         self.pos_x = 0
         self.pos_y = 0
         self.aim = 0
         self.name = name
+        self.verbose = verbose
     
     def forward(self, x: int = 0) -> None:
         if x < 0:
@@ -14,12 +15,12 @@ class Submarine:
             prev_pos_x = self.pos_x
             self.pos_x += x
 
-            print (f'Moved {x} steps forward, from {prev_pos_x} to {self.pos_x}.')
-
             prev_posy = self.pos_y
             self.pos_y += self.aim * x
 
-            print (f'Multipied aim by {x}, from {prev_posy} to {self.aim}.')
+            if self.verbose:
+                print (f'Moved {x} steps forward, from {prev_pos_x} to {self.pos_x}.')
+                print (f'Multipied aim by {x}, from {prev_posy} to {self.aim}.')
     
     def down(self, x: int = 0) -> None:
         if x < 0:
@@ -31,7 +32,8 @@ class Submarine:
             prev_aim = self.aim
             self.aim += x
 
-            print (f'Increased aim by {x}, from {prev_aim} to {self.aim}.')
+            if self.verbose:
+                print (f'Increased aim by {x}, from {prev_aim} to {self.aim}.')
 
     def up(self, x: int = 0) -> None:
         if x < 0:
@@ -42,20 +44,21 @@ class Submarine:
         else:   
             prev_aim = self.aim
             self.aim -= x
-
-            print (f'Decreased aim by {x}, from {prev_aim} to {self.aim}.')
+            
+            if self.verbose:
+                print (f'Decreased aim by {x}, from {prev_aim} to {self.aim}.')
     
-    def print(self) -> None:
+    def print_position(self) -> None:
         print(f'The position of the {self.name} submarine is:')
         print(f'X = {self.pos_x}, depth = {self.pos_y}.')
         print(f'Aim is: {self.aim}')
 
-    def calculate_answer(self) -> None:
+    def print_answer(self) -> None:
         answer = self.pos_x * self.pos_y
         print(f'The answer is {answer}.')
 
 
-sub = Submarine()
+sub = Submarine(verbose = False)
 
 with open(f'.\\code\\2dec\\input.txt') as file:
     contents = file.readlines()
@@ -72,5 +75,5 @@ for line in contents:
     else:
         print (f'command not understoond: {command}, {step}.')
     
-sub.print()
-sub.calculate_answer()
+sub.print_position()
+sub.print_answer()
