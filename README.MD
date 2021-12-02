@@ -1,5 +1,5 @@
 # Overview
-In this repositry you can find the code I used for the advent of code 2021 event.
+In this repository you can find the code I used for the advent of code 2021 event.
 
 # Installation process
 ## In Visual Studio Code
@@ -24,4 +24,4 @@ pip install -r .\requirements.txt
 ```
 .\.venv\Scripts\activate
 ```
-The venv should now be activated, you can now freely install packages from pip. In order to save them, type their names in the 'requirements.txt' file:
+The venv should now be activated, you can now freely install packages from pip. In order to save them, type their names in the 'requirements.txt' file.
